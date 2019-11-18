@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Kaushal's Resume</title>
+</head>
+<body>
+    <div id="nameblock" style="width: 98vw; height: 100vh;">
+        <svg id="name_svg"></svg>
+        <div id="thought" style="font-family: 'Lato', sans-serif; color: white; position: absolute; top: 75px; left: 600px; width: 560px">I am a peer in huge decentralized network! I am Computer Scientist currently pursuing my masters in Computer Science from Arizona State University, Tempe. I am pretty passionate about Blockchain Development and thus did my final year project on Blockchain 2.0 for which I published a paper in IEEE Xplore Journal. Also registered a patent with Indian Patent Office on the same idea. <br> Currently, sincerely looking for Summer 2020 Internship opportunities!</div>
+        <div id="passions">
+            <svg id="abilities_svg" style="height: 100%; width: 100%"></svg>
+            <div class="explore_but" onclick="location.href='#explore';">Expore about me</div>
+        </div>
+    </div>
+    <div id="explore" class="dv_bloc" style="width: 98vw; height: 100vh;">
+        <div class="timeline_block">
+            <svg id="time_svg">
+                <defs id="mdef">
+                    <pattern id="image" x="0" y="0" height="50" width="50">
+                      <image x="0" y="0" width="50" height="50" xlink:href="imgs/edu.png"></image>
+                    </pattern>
+                    <pattern id="image2" x="0" y="0" height="40" width="40">
+                        <image x="0" y="0" width="40" height="40" xlink:href="imgs/code.png"></image>
+                    </pattern>
+                </defs>
+            </svg>
+        </div>
+        <div class="text_block" style="padding: 10px; height: 450px; width: 98%; font-family: Montserrat, sans-serif; font-size: 14px">
+            <div class="ed_class" style="padding: 5px; float: left; width: 22%; height: 450px;">
+                <div class="icons" style="float: left; width: 15%; height: 450px;">
+                    <img src="./imgs/edu.png" height="45" width="45" style="margin-left: 5px; margin-top: 90px">
+                    <img src="./imgs/edu.png" height="45" width="45" style="margin-left: 5px; margin-top: 90px">
+                </div>
+                <div class="text" style="padding-left: 10px; margin-left: 3%; float: left; width: 75%; height: 450px;">
+                    <h3 style="margin-top: 20px; margin-left: 15px">Education</h3>
+                    <p style="margin-top: 40px"><b>Arizona State University</b><br>
+                        Master of Science,<br> Major: <b> Computer Science</b>
+                        <br> <i>Aug 2019 - May 2021 [Expected]</i>
+                    </p>
+                    <p style="margin-top: 60px" id="e5"><b>Mumbai University</b><br>
+                        Bachelor of Engineering,<br> Major: <b> Computer Engineering</b>
+                        <br> <i> Aug 2015 - May 2019</i>
+                    </p>
+                </div>
+            </div>
+            <div class="ed_class" style="padding: 5px; float: left; width: 24%; height: 450px;">
+                <div class="icons" style="float: left; width: 15%; height: 450px;">
+                    <img src="./imgs/code.png" height="35" width="45" style="margin-left: 5px; margin-top: 90px">
+                    <img src="./imgs/code.png" height="35" width="45" style="margin-left: 5px; margin-top: 135px">
+                </div>
+                <div class="text" style="padding-left: 10px; margin-left: 3%; float: left; width: 75%; height: 450px;">
+                    <h3 style="margin-top: 20px; margin-left: 25px">Projects</h3>
+                    <p style="margin-top: 40px" id="j2"><b>Green Currency: Efficient Solar power distribution in devices using Blockchain</b><br>
+                        Technologis used: Blockchain, Ethereum, Node JS, Game Theory
+                        <br><i> May 2018 - March 2029</i>
+                    </p>
+                    <p style="margin-top: 60px"><b>Electronic Health Record System</b><br>
+                        Technologis used: HTML, CSS, Javascript, PHP, MySQL
+                        <br> <i>July 2017 - May 2018</i>
+                    </p>
+                </div>
+            </div>
+            <div class="ed_class" style="padding: 5px; float: left; width: 25%; height: 450px;">
+                <div class="icons" style="float: left; width: 15%; height: 450px;">
+                    <img src="./imgs/code.png" height="35" width="45" style="margin-left: 5px; margin-top: 90px">
+                    <img src="./imgs/code.png" height="35" width="45" style="margin-left: 5px; margin-top: 105px">
+                </div>
+                <div class="text" style="padding-left: 10px; margin-left: 3%; float: left; width: 75%; height: 450px;">
+                    <h3 style="margin-top: 20px; margin-left: 25px">Work Experience</h3>
+                    <p style="margin-top: 40px" id="j3"><b>Blockchain Research Lab, ASU</b><br>
+                        Position: Research Aide,
+                        Hackathon: CoinList
+                        <br><i> Sep 2019 - present</i>
+                    </p>
+                    <p style="margin-top: 60px" id="j1"><b>Digital Vibes</b><br>
+                        Position: Application Development Intern<br>
+                        App developed: '<b>Kuendo</b>'
+                        <br> <i>Jan 2017 - Dec 2017</i>
+                    </p>
+                </div>
+            </div>
+            <div class="ed_class" style="padding: 5px; float: left; width: 25%; height: 450px;">
+                <svg id="skill_svg"></svg>
+            </div>
+        </div>
+    </div>
+    <div id="contact_box" style="background-color: #f9f9f9; width: 98vw; height: 100vh; margin-bottom: 0">
+        <svg id="contact_site"></svg>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="scripts/d3/d3.queue.js"></script>
+    <!-- <script src="scripts/d3/d3.scale.chromatic.js"></script>    -->
+    <script src="scripts/d3/d3.topojson.js"></script>
+    <script src="scripts/d3/d3.v4.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
