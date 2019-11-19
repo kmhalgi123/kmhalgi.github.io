@@ -64,5 +64,7 @@ div.tooltip {
     border: 0px;		
     border-radius: 2px;			
     pointer-events: none;
-    cursor: pointer;			
+    cursor: pointer;
+    top: 0;
+    left: 0;		
 }

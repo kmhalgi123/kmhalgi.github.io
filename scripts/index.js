@@ -354,9 +354,9 @@
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
-            div	.html("<div style='margin-top: 15px'><b>"+ d.tt_tile +"</b></div><div style='font-size: 14px'><i>"+ d.desc +"</i></div><div style='font-size: 15px; margin-top: 5px'>Pointer: "+ d.pointer +"</div><hr style='opacity: 0.2'><div style='text-alignment: left; margin-top: 10px'>Majors: "+ d.majors +"</div>")	
-                .style("left", (d3.event.pageX) + "px")		
-                .style("top", (d3.event.pageY - 40) + "px");
+            div.html("<div style='margin-top: 15px'><b>"+ d.tt_tile +"</b></div><div style='font-size: 14px'><i>"+ d.desc +"</i></div><div style='font-size: 15px; margin-top: 5px'>Pointer: "+ d.pointer +"</div><hr style='opacity: 0.2'><div style='text-alignment: left; margin-top: 10px'>Majors: "+ d.majors +"</div>")	
+                .style("left", (d3.event.pageX - 30) + "px")		
+                .style("top", (d3.event.pageY - 10) + "px");
         }).on("mouseout", function(d,i){
             div.transition()		
                 .duration(200)		
@@ -429,8 +429,8 @@
                 .duration(200)		
                 .style("opacity", .9);		
             div	.html("<div style='margin-top: 15px'><b>"+ d.title +"</b></div><div style='font-size: 14px'><i>"+ d.start_month +"-" + d.end_month + "</i></div><div style='font-size: 15px; margin-top: 5px'>Employer: "+ d.tt_tile +"</div><hr style='opacity: 0.2'><div style='text-alignment: left; margin-top: 10px'>Softwares Used: "+ d.Software_used +"</div>")	
-                .style("left", (d3.event.pageX) + "px")		
-                .style("top", (d3.event.pageY - 40) + "px");
+                .style("left", (d3.event.pageX - 100) + "px")		
+                .style("top", (d3.event.pageY - 10) + "px");
         }).on("mouseout", function(d,i){
             div.transition()		
                 .duration(200)		
@@ -476,13 +476,14 @@
         .attr("class", "x1 axis")
        	.attr("transform", "translate(65, 200)")
       	.call(x1ax);
-
     x1ax.scale(x1)
+
     lang_g.append("g")
         .attr("class", "y1 axis")
         .attr("transform", "translate(65,0)")
         .call(y1ax);
     y1ax.scale(y1)
+
     lang_g.selectAll(".bar")
         .data(lang_data)
       .enter().append("rect")
@@ -558,21 +559,16 @@
 
         var t = d3.transition()
             .duration(500)
-        x.domain([0,5])
+        
         y.domain(data.map(function(d) {
             return d.name;
         })).padding(0.5);
 
-        x1ax.scale(x)
         y1ax.scale(y)
         var yn = lang_g.selectAll(".y1")
             .data(data)
-            
-        var newY = yn.enter().append("g")
-            .attr("class", "y1")
-            .attr("transform", "translate(65,0)")
 
-        yn.merge(newY).transition(t).call(y1ax)
+        yn.transition(t).call(y1ax)
 
         lang_g.selectAll(".bar").remove()
 
@@ -613,6 +609,11 @@
         .attr("d", lineFunction([{x: 185, y: 65},{x: 500, y: 65}]))
         .style("stroke-width", '1.5px')
 
+    contact_svg.append('path')
+        .style("stroke", "black")
+        .attr("d", lineFunction([{x: 215, y: 70},{x: 350, y: 70}]))
+        .style("stroke-width", '1.5px')
+
     contact_svg.append("path")
         .attr("d", s_arc1)
         .attr("transform", "translate(500,90)")
@@ -621,6 +622,16 @@
     contact_svg.append('path')
         .style("stroke", "black")
         .attr("d", lineFunction([{x: 525, y: 90},{x: 525, y: 450}]))
+        .style("stroke-width", '1.5px')
+
+    contact_svg.append('path')
+        .style("stroke", "black")
+        .attr("d", lineFunction([{x: 520, y: 120},{x: 520, y: 240}]))
+        .style("stroke-width", '1.5px')
+
+    contact_svg.append('path')
+        .style("stroke", "black")
+        .attr("d", lineFunction([{x: 520, y: 260},{x: 520, y: 300}]))
         .style("stroke-width", '1.5px')
 
     contact_svg.append("path")
@@ -635,7 +646,17 @@
 
     contact_svg.append('path')
         .style("stroke", "black")
+        .attr("d", lineFunction([{x: 800, y: 470},{x: 1000, y: 470}]))
+        .style("stroke-width", '1.5px')
+
+    contact_svg.append('path')
+        .style("stroke", "black")
         .attr("d", lineFunction([{x: width-400, y: 455},{x: width-400, y: 90}]))
+        .style("stroke-width", '1.5px')
+
+    contact_svg.append('path')
+        .style("stroke", "black")
+        .attr("d", lineFunction([{x: width-405, y: 255},{x: width-405, y: 160}]))
         .style("stroke-width", '1.5px')
 
     contact_svg.append("path")
@@ -650,12 +671,27 @@
 
     contact_svg.append('path')
         .style("stroke", "black")
+        .attr("d", lineFunction([{x: width-255, y: 70},{x: width-200, y: 70}]))
+        .style("stroke-width", '1.5px')
+
+    contact_svg.append('path')
+        .style("stroke", "black")
         .attr("d", lineFunction([{x: 525, y: height-100},{x: 525, y: height-50}]))
         .style("stroke-width", '1.5px')
 
     contact_svg.append('path')
         .style("stroke", "black")
+        .attr("d", lineFunction([{x: 525, y: height-110},{x: 525, y: height-125}]))
+        .style("stroke-width", '1.5px')
+
+    contact_svg.append('path')
+        .style("stroke", "black")
         .attr("d", lineFunction([{x: 700, y: 65},{x: width - 450, y: 65}]))
+        .style("stroke-width", '1.5px')
+
+    contact_svg.append('path')
+        .style("stroke", "black")
+        .attr("d", lineFunction([{x: 730, y: 70},{x: width - 550, y: 70}]))
         .style("stroke-width", '1.5px')
 
     contact_svg.append("text").text("IDE Fluency")
@@ -766,7 +802,7 @@
     .style('font-size', '15px')
     .style('font-weight', 'bold')
 
-    pub_g.append("text").text("A Syatem and Method")
+    pub_g.append("text").text("A System and Method")
     .attr("x", 0)
     .attr("y", 0)
     .attr('transform', function(d,i) {return 'translate(565, 310)'})
@@ -832,14 +868,14 @@
         .attr("width", 40)
         .attr("rx", 4)
         .attr("ry", 4)
-        .attr('fill', "white")
+        .attr('fill', "#FE5F55")
         .attr('stroke', "black")
-        .attr('transform', 'translate(1005, 120)')
+        .attr('transform', 'translate('+(width-340)+', 120)')
 
-        lan_g.append("text").text("Marathi")
+    lan_g.append("text").text("Marathi")
         .attr("x", 0)
         .attr("y", 0)
-        .attr('transform', "translate(1005, 390)")
+        .attr('transform', "translate("+(width-342)+", 390)")
         .style('font-family','Montserrat, sans-serif')
         .style('font-size', '12px')
 
@@ -850,14 +886,14 @@
         .attr("width", 40)
         .attr("rx", 4)
         .attr("ry", 4)
-        .attr('fill', "white")
+        .attr('fill', "#C7EFCF")
         .attr('stroke', "black")
-        .attr('transform', 'translate(1085, 120)')
+        .attr('transform', 'translate('+(width-260)+', 120)')
 
-        lan_g.append("text").text("Hindi")
+        lan_g.append("text").text("English")
         .attr("x", 0)
         .attr("y", 0)
-        .attr('transform', "translate(1085, 390)")
+        .attr('transform', "translate("+(width-260)+", 390)")
         .style('font-family','Montserrat, sans-serif')
         .style('font-size', '12px')
 
@@ -868,21 +904,20 @@
     .attr("width", 40)
     .attr("rx", 4)
     .attr("ry", 4)
-    .attr('fill', "white")
+    .attr('fill', "#EEF5DB")
     .attr('stroke', "black")
-    .attr('transform', 'translate(1165, 140)')
+    .attr('transform', 'translate('+(width-180)+', 140)')
 
-    lan_g.append("text").text("English")
+    lan_g.append("text").text("Hindi")
         .attr("x", 0)
         .attr("y", 0)
-        .attr('transform', "translate(1165, 390)")
+        .attr('transform', "translate("+(width-180)+", 390)")
         .style('font-family','Montserrat, sans-serif')
         .style('font-size', '12px')
 
     con_g = contact_svg.append("g")
 
     con_g.append("image").attr('href', './imgs/mail.png')
-        .attr('class','pass')
         .attr('height', 60)
         .attr('width', 50)
         .attr('transform', 'translate(700, 500)')
@@ -897,13 +932,12 @@
         .style("font-weight", 'bold')
 
     con_g.append("image").attr('href', './imgs/location.png')
-        .attr('class','pass')
         .attr('height', 40)
         .attr('width', 40)
         .attr('transform', 'translate(710, 550)')
         .style('cursor','pointer')
 
-    con_g.append("text").text("1709 S Jentilly Ln, Tempe, AZ, 85281")
+    con_g.append("text").text("My address here, 85281")
         .attr("x", 0)
         .attr("y", 0)
         .attr('transform', "translate(775, 580)")
@@ -912,7 +946,6 @@
         .style("font-weight", 'bold')
 
     con_g.append("image").attr('href', './imgs/web.png')
-        .attr('class','pass')
         .attr('height', 30)
         .attr('width', 30)
         .attr('transform', 'translate(715, 605)')
