@@ -13,9 +13,17 @@
             .attr('height', 440)
         contact_svg = d3.select('#contact_site')
             .attr('width', width)
-            .attr('height', height)
+            .attr('height', height);
 
-    isActive = false
+    isActive = false;
+
+    console.log(width, height)
+    if(width < 1200 || height < 650){
+        if (window.confirm('This resume is best viewed in resolution 1360 x 650. Click "ok" to visit non-interactive version. Cancel will load this website ')) 
+        {
+            window.location.href='http://kaushalmhalgi.tech/';
+        };
+    }
 
     var div = d3.select("body").append("div")	
         .attr("class", "tooltip")				
@@ -788,7 +796,6 @@
     pub_g = contact_svg.append("g")
     
     pub_g.append("image").attr('href', './imgs/patent.png')
-        .attr('class','pass')
         .attr('height', 80)
         .attr('width', 80)
         .attr('transform', function(d,i) {return 'translate(600, 170)'})
@@ -824,7 +831,6 @@
 
 
     pub_g.append("image").attr('href', './imgs/paper.png')
-        .attr('class','pass')
         .attr('height', 80)
         .attr('width', 80)
         .attr('transform', function(d,i) {return 'translate(800, 170)'})
@@ -890,7 +896,7 @@
         .attr('stroke', "black")
         .attr('transform', 'translate('+(width-260)+', 120)')
 
-        lan_g.append("text").text("English")
+    lan_g.append("text").text("English")
         .attr("x", 0)
         .attr("y", 0)
         .attr('transform', "translate("+(width-260)+", 390)")
